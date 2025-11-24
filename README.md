@@ -54,7 +54,7 @@ We saw in the exploratory_data_analysis, that the top 3 features are cards_score
 For the baseline model, we choose to use a simple Linear regression model to predict the amount to raise once the action was already predicted to be a Raise.
 We saw in the exploratory_data_analysis, that the top 3 features are cards_score, amount_required and chen_score. Just like for the above classification model with Decision trees, we will keep only the 2 features cards_score and amount_required as input for a simple baseline model, since the chen_score is a metric a bit redundant from the cards_score. Also to do the plotting we will keep only the cards_score, so that we can represent in 2D the cards score vs the amount raised by the current player, and show the line of the linear regression model in the same plot.
 
-## Final result
+## Result for the baseline model
 Finally, we were able to create a function for Predictions using our baseline model.
 The function is called "predict_poker_moves_v1" and is available in the Baseline modeling notebook.
 We were able to make some quick tests with the function by giving it some input data, and the results seem to make sense
