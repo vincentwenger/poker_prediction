@@ -17,11 +17,10 @@ The input data for the model would be for each game:
 Based on this input, the model should be able to predict what the player's next action should be (fold, check/call, or raise) and in case the action is "raise", what should be the best amount to raise to be the most profitable possible.
 
 ## What is the data?
-This data is from the UCI Machine Learning Repository and was collected via a survey on Amazon Mechanical Turk. The survey describes different driving scenarios, including the destination, current time, weather, and passenger, and then asks people whether they will accept the coupon if they are the driver. There are three possible answers people can choose from:
+The Poker Hand History File Format Specification is described at this link https://phh.readthedocs.io/en/stable/. For the poker dataset, I am using this link https://zenodo.org/records/17136841. I downloaded the attached file "poker-hand-histories.zip". As explained on the link, the ZIP contains many files in the poker hand history (PHH) format. I extracted the ZIP and focused on the folder "pluribus". It contains 10.000 PHH files, and each file corresponds to 1 game between 5 human professional poker players and 1 poker AI named "Pluribus".
+If you need the raw data, you need to download the ZIP and you will get the raw data under the folder "pluribus".
 
-- **“Right away”**
-- **“Later, before the coupon expires”**
-- **“No, I do not want the coupon”**
+In the first notebook "Data preprocessing", I transformed the raw data into a preprocessed CSV file which has 91356 rows and 31 columns
 
 ## What are the findings?
 
