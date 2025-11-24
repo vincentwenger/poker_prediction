@@ -31,30 +31,17 @@ In the first notebook "Data preprocessing", I transformed the raw data into a pr
 
 ## What are the findings?
 
-The findings are that :
-- <ins>For bar coupons:</ins>
-  - The more frequent the drivers go to a bar each month, the more likely they are to accept the coupons
-  - Drivers with a lower income and who go often to cheap restaurants are less likely to accept the coupons
-- <ins>For Carry out & Take away coupons:</ins>
-  - Drivers who are more likely to accept the coupons are male drivers, who are 50 years old or more, who go home or to no urgent place, don't travel with kid(s), around 2PM or 6PM, when it doesn't rain.
-  - Drivers with lower level of education, with lower income, with a job in construction, building maintenance or healthcare practitioners are more likely to accept the coupon
-  - Drivers who don't go more than 8 times a month to Bars or Coffeehouses or who never buy takeaway food or never go to cheap restaurants are more likely to accept the coupons
-  - Coupons are better accepted when it has more time before it expires
-- <ins>For Coffee House coupons:</ins>
-  - Drivers who are more likely to accept the coupons are drivers, who are below 21 years old, who go to no urgent place, travel with friend(s) or partner, around 10AM, when it doesn't snow and the temperature is hot.
-  - Drivers with lower level of education, with lower income, with a job in building maintenance or healthcare practitioners are more likely to accept the coupon
-  - Drivers who don't go more than 8 times a month to Bars, go at least 3 times a month to Coffee Houses, or order at least once a month Take away food, or go at least once a month to cheap or expensive restaurants are more likely to accept the coupons
-  - Coupons are better accepted when it has more time before it expires
-- <ins>For Cheap restaurant coupons:</ins>
-  - Drivers who are more likely to accept the coupons are drivers, who are less than 50 years old, who go to no urgent place, travel with friend(s) or partner, around 2PM or 6PM, when it is sunny and the temperature is not too cold.
-  - Drivers who don't go more than 8 times a month to Bars or Coffee Houses, or never order takeaway food, or go at least 4 times a month to cheap restaurants or at least once a month to expensive restaurants are more likely to accept the coupons
-  - Drivers are more likely to accept the coupon when the geographical distance doesn't exceed 25 minutes drive
-  - Coupons are better accepted when it has more time before it expires
-- <ins>For Expensive restaurant coupons:</ins>
-  - Drivers who are more likely to accept the coupons are drivers, who are less than 50 years old, who go to no urgent place, travel with partner, around 10AM or 6PM, when weather is sunny and the temperature is not too cold.
-  - Single or unmarried partners drivers with lower level of education, or with higher income, or with a job in Production occupations are more likely to accept the coupon
-  - Drivers who go more than 8 times a month to Bars or cheap restaurants or expensive restaurants or who order more than 8 times a month Take away food are more likely to accept the coupons
-  - Coupons are better accepted when it has more time before it expires
+From the exploratory data analysis of the CSV file, the findings are that :
+- Each row represents a turn during a poker game where a player had to decide about an action : fold, check/call, or raise his hand. It could be during the preflop, flop, turn or river stage of the game
+- There are 10000 unique games played between 6 players.
+- There are no duplicates in the dataset. There could be some missing values for the columns flop, turn, and river but it means the phase of the game at the moment the player had to make an action was not yet at the flop, turn or river
+- The cards which are the most kept and raised in the preflop phase of a poker game are pairs and when players have 2 cards which are both higher than Jack. The 72 is the hand that players fold the most
+- The preflop cards which have the best average return are the pair of Aces and the pair of Kings. JT and hands with an Ace and a low card have the worst return
+- Players tend to raise when the flop cards have a potential to make a straight with connected cards like 743 or 965. They tend to avoid raising when there is already a pair in the flop cards
+- The top 3 most important features to predict the action that the player will play (Fold, check/call or raise) seem to be the cards_score, amount_required and chen_score. The next 3 are the stage_int, nb_players_left and amount_committed
+- Players fold more often when they have less than a Three of a kind. When they have better than that, players tend to raise more frequently. And when the previous player has raised a great amount of money, the current player tends to check/call more unless the player has a great hand
+- Considering only the 2 preflop cards, players raise when they have at least a pair or some suited connected cards. Players fold more often when they have less than a pair of queens and when the previous player has raised a great amount of money
+- Once players decided to raise, they tend to raise a greater amount when the chen score of their 2 initial cards is higher. The mean of the raised amount is a bit more than 6 times the minimum bet of 100. However, the 50th percentile is 2.5 times the minimum bet.
 
 ## What do I recommend?
 
