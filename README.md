@@ -45,21 +45,16 @@ From the exploratory data analysis of the CSV file, the findings are that :
 
 ## What do I recommend?
 
-- In general, it is better to create coupons which have more time before they expire
-- Distribute bar coupons only to people who go to bars often
-- Distribute Carry out & Take away coupons :
-  - in places where people are older, with no kids around
-  - when it doesn't rain
-  - near places with construction zones or hospitals, or near residential neighborhoods where people with lower income live
-- Distribute Coffee House coupons:
-  - in places with young people who are less than 21
-  - near residential neighborhoods where people with lower income live
-  - when it doesn't snow and the temperature is hot.
-- Distribute Cheap restaurant coupons:
-  - when weather is sunny and the temperature is not too cold
-  - to people who go to restaurants often and never order take away food
-  - to restaurants which are not located too far from the drivers
-- Distribute Expensive restaurant coupons:
-  - when weather is sunny and the temperature is not too cold
-  - to single or unmarried drivers with higher income
-  - who people who already go often to bars and restaurants
+In the Baseline modeling notebook, we said that we expect to build a model to answer the research question. Based on the input data, the model should be able to make 2 predictions:
+1) What the player's next action should be (fold, check/call, or raise). For each move there is only one of those 3 choices. For this point, we will need a classification model to predict the action
+For the baseline model, we choose to use a Decision Tree because it is interpretable and can be easily explained. Most of the models are difficult to explain to non technical users, and Decision Tree on the other hand is very intuitive to understand. That is one of the reason I am interested to use a Decision Tree, to communicate to non technical users how this machine learning model works and how it fits in a machine learning project. Also Decision Tree is a very dynamic machine learning model, as it scales with the data. The bias is low.
+We saw in the exploratory_data_analysis, that the top 3 features are cards_score, amount_required and chen_score. We will keep only the 2 features cards_score and amount_required as input for a simple baseline model, since the chen_score is a metric a bit redundant from the cards_score. Also keeping only 2 features will allow us to do more easily some visualizations and plots
+
+2) In case the action predicted is "raise", what should be the best amount to raise to be the most profitable possible. In the other cases when the choice was fold or check/call, there is no need to predict any amount as the player won't need to bet anything. For this point, we will need another regression model to predict the amount to raise.
+For the baseline model, we choose to use a simple Linear regression model to predict the amount to raise once the action was already predicted to be a Raise.
+We saw in the exploratory_data_analysis, that the top 3 features are cards_score, amount_required and chen_score. Just like for the above classification model with Decision trees, we will keep only the 2 features cards_score and amount_required as input for a simple baseline model, since the chen_score is a metric a bit redundant from the cards_score. Also to do the plotting we will keep only the cards_score, so that we can represent in 2D the cards score vs the amount raised by the current player, and show the line of the linear regression model in the same plot.
+
+## Final result
+Finally, we were able to create a function for Predictions using our baseline model.
+The function is called "predict_poker_moves_v1" and is available in the Baseline modeling notebook.
+We were able to make some quick tests with the function by giving it some input data, and the results seem to make sense
