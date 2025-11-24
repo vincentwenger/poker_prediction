@@ -6,8 +6,15 @@
 3) Baseline modeling: https://github.com/vincentwenger/poker_prediction/blob/main/03_Poker_baseline_modeling.ipynb
 
 ## What is the problem?
-This project aims to understand the differences between customers who accepted a driving coupon and those who did not.
-It uses exploratory data analysis, statistical summarization and data visualization to discern some findings
+We expect to build a model to answer the research question.
+The input data for the model would be for each game:
+- the player hands
+- the community cards available
+- the game step (preflop, flop, turn or river)
+- the number of players left in the game
+- the amount already committed in the game
+- the amount required to continue playing the game
+Based on this input, the model should be able to predict what the player's next action should be (fold, check/call, or raise) and in case the action is "raise", what should be the best amount to raise to be the most profitable possible.
 
 ## What is the data?
 This data is from the UCI Machine Learning Repository and was collected via a survey on Amazon Mechanical Turk. The survey describes different driving scenarios, including the destination, current time, weather, and passenger, and then asks people whether they will accept the coupon if they are the driver. There are three possible answers people can choose from:
