@@ -18,9 +18,16 @@ Based on this input, the model should be able to predict what the player's next 
 
 ## What is the data?
 The Poker Hand History File Format Specification is described at this link https://phh.readthedocs.io/en/stable/. For the poker dataset, I am using this link https://zenodo.org/records/17136841. I downloaded the attached file "poker-hand-histories.zip". As explained on the link, the ZIP contains many files in the poker hand history (PHH) format. I extracted the ZIP and focused on the folder "pluribus". It contains 10.000 PHH files, and each file corresponds to 1 game between 5 human professional poker players and 1 poker AI named "Pluribus".
-If you need the raw data, you need to download the ZIP and you will get the raw data under the folder "pluribus".
+If you need the raw data, you need to download the ZIP and you will get the raw data under the folder "pluribus". 
+All those 10000 Poker games have the same common attributes:
+- variant : NT. The poker variant is No-limit Texas hold ‘em
+- ante : 0. The poker ante is 0
+- small_blind : 50. The amount for the small blind is 50
+- big_blind : 100. The amount for the big blind is 100
+- min_bet : 100. The minimum bet is 100
+- starting_stack : 10000. The starting stack amount is 10000
 
-In the first notebook "Data preprocessing", I transformed the raw data into a preprocessed CSV file which has 91356 rows and 31 columns
+In the first notebook "Data preprocessing", I transformed the raw data into a preprocessed CSV file which has 91356 rows and 31 columns. 
 
 ## What are the findings?
 
