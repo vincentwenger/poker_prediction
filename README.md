@@ -57,4 +57,5 @@ We saw in the exploratory_data_analysis, that the top 3 features are cards_score
 ## Result for the baseline model
 Finally, we were able to create a function for Predictions using our baseline model.
 The function is called "predict_poker_moves_v1" and is available in the Baseline modeling notebook.
-We were able to make some quick tests with the function by giving it some input data, and the results seem to make sense
+We were able to make some quick tests with the function by giving it some input data, and the results seem to make sense.
+We will try to improve it in the future with some better models
