@@ -1,9 +1,9 @@
 # Is it possible to predict the most profitable moves to play in a poker game ?
 
 **Assignment notebooks:** 
-- Data preprocessing: https://github.com/vincentwenger/poker_prediction/blob/main/01_Poker_data_preprocessing.ipynb
-- Exploratory data analysis: https://github.com/vincentwenger/poker_prediction/blob/main/02_Poker_exploratory_data_analysis.ipynb
-- Baseline modeling: https://github.com/vincentwenger/poker_prediction/blob/main/03_Poker_baseline_modeling.ipynb
+1) Data preprocessing: https://github.com/vincentwenger/poker_prediction/blob/main/01_Poker_data_preprocessing.ipynb
+2) Exploratory data analysis: https://github.com/vincentwenger/poker_prediction/blob/main/02_Poker_exploratory_data_analysis.ipynb
+3) Baseline modeling: https://github.com/vincentwenger/poker_prediction/blob/main/03_Poker_baseline_modeling.ipynb
 
 ## What is the problem?
 This project aims to understand the differences between customers who accepted a driving coupon and those who did not.
