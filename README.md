@@ -85,7 +85,7 @@ From the model improvement notebook, the findings are that :
           - Our model's precision is 0.86, this means that 86% of the actions the model identified as positive cases are actual positive cases
           - Our F1 score of 0.86 indicates that the model is fairly good at identifying positive cases without labeling too many false positives or missing too many actual positives. This score is generally considered quite good for most classification tasks. It is useful for balancing precision and recall and for dealing with our imbalanced dataset
           - Our AUC of 0.95 means that there is 95% chance that the model will be able to distinguish between positive class and negative class.
-- In the previous notebook, we created a baseline regression model, which has test mean absolute error around 452, test root mean squared error around 947, test R2 score around 0.31. The goal was to improve the baseline model
+- In the 3rd notebook about "Baseline modeling", we created a baseline regression model, which has test mean absolute error around 452, test root mean squared error around 947, test R2 score around 0.31. The goal was to improve the baseline model
 - Regression models with 15 features:
      - all the models have better performance metrics than the baseline regression model
      - the top 3 features are amount_required, amount_committed and stage_int.
