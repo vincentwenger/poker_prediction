@@ -8,8 +8,8 @@
 5) Game testing: https://github.com/vincentwenger/poker_prediction/blob/main/05_game_testing.ipynb
 
 **API endpoint and UI front-end application:** 
-- API endpoint: API_endpoint.py
-- UI front-end application with streamlit: UI_app.py (requires poker_functions.py)
+- API endpoint: https://github.com/vincentwenger/poker_prediction/blob/main/API_endpoint.py
+- UI front-end application with streamlit: https://github.com/vincentwenger/poker_prediction/blob/main/UI_app.py (requires poker_functions.py)
 
 ## What is the problem?
 We expect to build a model to answer the research question.
