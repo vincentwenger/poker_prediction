@@ -100,7 +100,7 @@ From the model improvement notebook, the findings are that :
 ## What are the suggestions for next steps for the Final report?
 
 The recommendations for the next steps are:
-- Make all our models play against each other’s using a poker game engine. Then create some tournaments to figure out which models beat the others in real poker games. We could explore if the winners will be the same ones that we found have the best performance metrics in the 4th notebook about "Model improvement". I did this in the 5th notebook about "Game testing". The results from this notebook were that:
+- Make all our models play against each other’s using a poker game engine. Then create some tournaments to figure out which models beat the others in real poker games. We could explore if the winners will be the same ones that we found have the best performance metrics in the 4th notebook about "Model improvement". I did this in the 5th notebook about "Game testing". The results from it are that:
      - We are able to make our models from the previous notebook play against each other’s using a poker game engine. We created some tournaments to figure out which models beat the others in reel poker games. To play the poker games, we used the python library "pypokerengine"
      - The player using the Baseline model has won 92% of the tournaments against some players using basic algorithms.
      - The best classifiers are in this order: 1) K-Nearest Neighbors Classifier, 2) Voting Classifier, 3) Random Forest Classifier, 4) Stacking Classifier
