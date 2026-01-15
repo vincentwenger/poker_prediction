@@ -4,6 +4,12 @@
 1) Data preprocessing: https://github.com/vincentwenger/poker_prediction/blob/main/01_Poker_data_preprocessing.ipynb
 2) Exploratory data analysis: https://github.com/vincentwenger/poker_prediction/blob/main/02_Poker_exploratory_data_analysis.ipynb
 3) Baseline modeling: https://github.com/vincentwenger/poker_prediction/blob/main/03_Poker_baseline_modeling.ipynb
+4) Model improvement: https://github.com/vincentwenger/poker_prediction/blob/main/04_Poker_model_improvement.ipynb
+5) Game testing: https://github.com/vincentwenger/poker_prediction/blob/main/05_game_testing.ipynb
+
+**API endpoint and UI front-end application:** 
+- API endpoint: API_endpoint.py
+- UI front-end application with streamlit: UI_app.py (requires poker_functions.py)
 
 ## What is the problem?
 We expect to build a model to answer the research question.
