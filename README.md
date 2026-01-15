@@ -78,7 +78,7 @@ From the model improvement notebook, the findings are that :
 - In the 3rd notebook about "Baseline modeling", we created a baseline classification model, which has train accuracy, test accuracy, test recall (weighted avg) around 0.74, and a test precision and F1 (weighted avg) around 0.73. The goal was to improve the baseline model.
 - Classification models with 15 features:
      - all the classification models have better performance metrics than the baseline classification model except the Gaussian Naive Bayes model
-     - the top 3 features are: cards_score, amount_required and chen_score.
+     - the top 3 features are: Cards score, Amount required and Chen score.
      - the best classification models with 15 features are the Stacking Classifier and XGBoost Classifier:
           - Our models have 86% accuracy; this means that 86 out of 100 predictions are correct. Accuracy is easy to interpret but can be misleading in imbalanced datasets, which is our case since we have an imbalanced dataset
           - Our model's recall is 0.86, this means that it was able to find 86% of all positive cases.
