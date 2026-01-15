@@ -35,7 +35,7 @@ All those 10000 Poker games have the same common attributes:
 
 In the first notebook "Data preprocessing", I transformed the raw data into a preprocessed CSV file which has 91356 rows and 31 columns. 
 
-## What are the findings?
+## What are the findings of the Initial report?
 
 From the exploratory data analysis of the CSV file, the findings are that :
 - Each row represents a turn during a poker game where a player had to decide about an action : fold, check/call, or raise his hand. It could be during the preflop, flop, turn or river stage of the game
@@ -49,7 +49,7 @@ From the exploratory data analysis of the CSV file, the findings are that :
 - Considering only the 2 preflop cards, players raise when they have at least a pair or some suited connected cards. Players fold more often when they have less than a pair of queens and when the previous player has raised a great amount of money
 - Once players decided to raise, they tend to raise a greater amount when the chen score of their 2 initial cards is higher. The mean of the raised amount is a bit more than 6 times the minimum bet of 100. However, the 50th percentile is 2.5 times the minimum bet.
 
-## What do I recommend?
+## What do I recommend for the Initial report?
 
 In the Baseline modeling notebook, we said that we expect to build a model to answer the research question. Based on the input data, the model should be able to make 2 predictions:
 1) What the player's next action should be (fold, check/call, or raise). For each move there is only one of those 3 choices. For this point, we will need a classification model to predict the action
