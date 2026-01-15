@@ -79,7 +79,7 @@ From the model improvement notebook, the findings are that :
 - Classification models with 15 features:
      - all the classification models have better performance metrics than the baseline classification model except the Gaussian Naive Bayes model
      - the top 3 features are: cards_score, amount_required and chen_score.
-     - the best classification models with 15 features are the Stacking Classifier and XGB Classifier:
+     - the best classification models with 15 features are the Stacking Classifier and XGBoost Classifier:
           - Our models have 86% accuracy; this means that 86 out of 100 predictions are correct. Accuracy is easy to interpret but can be misleading in imbalanced datasets, which is our case since we have an imbalanced dataset
           - Our model's recall is 0.86, this means that it was able to find 86% of all positive cases.
           - Our model's precision is 0.86, this means that 86% of the actions the model identified as positive cases are actual positive cases
