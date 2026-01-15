@@ -65,3 +65,35 @@ Finally, we were able to create a function for Predictions using our baseline mo
 The function is called "predict_poker_moves_v1" and is available in the Baseline modeling notebook.
 We were able to make some quick tests with the function by giving it some input data, and the results seem to make sense.
 We will try to improve it in the future with some better models
+
+## What are the findings of the Final report?
+
+From the model improvement notebook, the findings are that :
+- Based on the input data, the model should be able to make 2 predictions:
+    - What the player's next action should be (fold, check/call, or raise). For each move there is only one of those 3 choices. For this point, we improved a classification model to predict the action
+    - In case the action predicted is "raise", what should be the best amount to raise to be the most profitable possible. In the other cases when the choice was fold or check/call, there is no need to predict any amount as the player won't need to bet anything. For this point, we improved a regression model to predict the amount to raise. 
+- For feature engineering, we have enriched the data with many columns calculated from the player or community cards. For example, the number of pairs, sets, quads for the player or community cards; or the number of cards which have potential to make a straight or a flush. It allowed us to have more features available to use for our models.
+- The dataset has 3 classes (0 - Fold, 1 - Check/call, 2 - Raise) and the class percentage is 53%, 27% and 20%. The dataset is imbalanced.
+- To be successful in a poker game, it is more important to be correct when the player raises, because he takes the risk to lose money. In case the player is incorrect when he folds, it is not as important because he will not lose money. Therefore, we will be looking to have a good precision metric. In our problem, the negative class should be the action: Fold, and the positive class is the action Call or Raise. It is important to minimize the number of false positives because being wrong can cause a loss of money. Additionally, in some cases it is also important not to miss strong hands: so not to fold when we have strong hands. Because this can cause the player to miss on potential good gains. Therefore, for this imbalanced poker dataset, we focused more to have good precision, recall, or F1 score.
+- In the previous notebook, we created a baseline classification model, which has train accuracy, test accuracy, test recall (weighted avg) around 0.74, and a test precision and F1 (weighted avg) around 0.73. The goal was to improve the baseline model.
+- Classification models with 15 features:
+     - all the classification models have better performance metrics than the baseline classification model except the Gaussian Naive Bayes model
+     - the top 3 features are: cards_score, amount_required and chen_score.
+     - the best classification models with 15 features are the Stacking Classifier and XGB Classifier:
+          - Our models have 86% accuracy; this means that 86 out of 100 predictions are correct. Accuracy is easy to interpret but can be misleading in imbalanced datasets, which is our case since we have an imbalanced dataset
+          - Our model's recall is 0.86, this means that it was able to find 86% of all positive cases.
+          - Our model's precision is 0.86, this means that 86% of the actions the model identified as positive cases are actual positive cases
+          - Our F1 score of 0.86 indicates that the model is fairly good at identifying positive cases without labeling too many false positives or missing too many actual positives. This score is generally considered quite good for most classification tasks. It is useful for balancing precision and recall and for dealing with our imbalanced dataset
+          - Our AUC of 0.95 means that there is 95% chance that the model will be able to distinguish between positive class and negative class.
+- In the previous notebook, we created a baseline regression model, which has test mean absolute error around 452, test root mean squared error around 947, test R2 score around 0.31. The goal was to improve the baseline model
+- Regression models with 15 features:
+     - all the models have better performance metrics than the baseline regression model
+     - the top 3 features are amount_required, amount_committed and stage_int.
+     - Players will bet more if the previous players already betted an important amount or if they already committed a great amount in the pot or as we advance further into the game's stages. Players will bet less if the community cards show that there is potential for a straight, a flush, or if there are pairs
+     - the best regression models with 15 features is the Stacking regressor, which has:
+          - a MAE (Mean absolute error) of 172.3, which means that on average, our predictions on the amount to raise are off by 172.3. So, when predicting the amount that a poker player needs to raise, in a game where the starting stack amount is 10000 and the minimum bet is 100, if the model predicts an amount to raise of 600, we can expect the actual amount to raise to be anywhere between 427.7 and 772.3
+          - a RMSE (Root Mean Squared Error) of 526.33, which indicates that, in a game where the starting stack amount is 10000 and the minimum bet is 100, the standard deviation of our prediction errors is roughly 526.33. Essentially, this tells us that our predictions are scattered on average by 526.33 from the actual amount to raise.
+          - A R² of 0.79 which means that 79% of the variation in the amount raised by the player can be explained by the variables in the model. A R² close to 1 indicates that the model has a very good fit. In this case, a value of 0.79 is a good sign that the model is capturing a significant amount of the variability in the data, though there is still 21% of the variation that the model does not explain.
+          - Given that the RMSE is a bit high and the R² is only 0.79, the model is not perfect, but it already offers clear insights into which factors are driving the amount that the player needs to raise
+- By reducing the number of features to 5 using backward sequential feature selection to improve the KNN regressor model, we were able to further improve the test mean absolute error to 161, the test root mean squared error to 521 and the test R2 to 0.7928
+
