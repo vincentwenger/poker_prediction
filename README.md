@@ -88,7 +88,7 @@ From the model improvement notebook, the findings are that :
 - In the 3rd notebook about "Baseline modeling", we created a baseline regression model, which has test mean absolute error around 452, test root mean squared error around 947, test R2 score around 0.31. The goal was to improve the baseline model
 - Regression models with 15 features:
      - all the models have better performance metrics than the baseline regression model
-     - the top 3 features are amount_required, amount_committed and stage_int.
+     - the top 3 features are Amount required, Amount committed and Stage of the game.
      - Players will bet more if the previous players already betted an important amount or if they already committed a great amount in the pot or as we advance further into the game's stages. Players will bet less if the community cards show that there is potential for a straight, a flush, or if there are pairs
      - the best regression models with 15 features is the Stacking regressor, which has:
           - a MAE (Mean absolute error) of 172.3, which means that on average, our predictions on the amount to raise are off by 172.3. So, when predicting the amount that a poker player needs to raise, in a game where the starting stack amount is 10000 and the minimum bet is 100, if the model predicts an amount to raise of 600, we can expect the actual amount to raise to be anywhere between 427.7 and 772.3
